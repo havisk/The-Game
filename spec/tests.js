@@ -8,7 +8,7 @@ var Player1 = function Player1(options) {
 	options = options || [];
 
 	this.hitAttack = function (sack) {
-		var hit = sack || 100;
+		var hit = Math.floor(Math.random() * 6) + 100;
 		return this.health = this.health - hit;
 	};
 
@@ -28,7 +28,8 @@ var Player2 = function Player2(options) {
 	options = options || [];
 
 	this.hitAttack = function (sack) {
-		var hit = sack || 100;
+		var hit = Math.floor(Math.random() * 6) + 100;
+
 		return this.health = this.health - hit;
 	};
 
