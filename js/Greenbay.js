@@ -2,9 +2,9 @@ let Player2 = function(options){
 	options = options || [];
 
 	this.hitAttack = function(sack){
-		let hit = Math.floor(Math.random() * 6) + 100 ;
+		let hitSac = sack || 10;
 
-		return this.health = this.health - hit;
+		return this.health = this.health - hitSac;
 	};
 
 	Player2.prototype.health = 2000;

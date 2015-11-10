@@ -8,8 +8,8 @@ var Player1 = function Player1(options) {
 	options = options || [];
 
 	this.hitAttack = function (sack) {
-		var hit = Math.floor(Math.random() * 6) + 100;
-		return this.health = this.health - hit;
+		var hitSac = sack || 10;
+		return this.health = this.health - hitSac;
 	};
 
 	Player1.prototype.health = 2000;
@@ -28,9 +28,9 @@ var Player2 = function Player2(options) {
 	options = options || [];
 
 	this.hitAttack = function (sack) {
-		var hit = Math.floor(Math.random() * 6) + 100;
+		var hitSac = sack || 10;
 
-		return this.health = this.health - hit;
+		return this.health = this.health - hitSac;
 	};
 
 	Player2.prototype.health = 2000;
@@ -68,6 +68,44 @@ var _Greenbay2 = _interopRequireDefault(_Greenbay);
 
 var bear = new _Bears2['default']();
 var green = new _Greenbay2['default']();
+
+var p1health = (0, _jquery2['default'])('.p1health');
+var p2health = (0, _jquery2['default'])('.p2health');
+
+var p1attack = (0, _jquery2['default'])('#attack1');
+var p2attack = (0, _jquery2['default'])('#attack2');
+
+var gameOver1 = (0, _jquery2['default'])('.gameover1');
+var gameOver2 = (0, _jquery2['default'])('.gameover2');
+
+p1health.text(bear.health);
+p2health.text(green.health);
+
+p1attack.on('click', function () {
+
+  var num = _underscore2['default'].random(0, 1000);
+  green.hitAttack(num);
+
+  if (green.health <= 0) {
+    p2health.text('Bears Crush the Packers').addClass('downpacker');
+    gameOver1.text('DA Bears');
+  } else {
+    p2health.text(green.health);
+  }
+});
+
+p2attack.on('click', function () {
+
+  var num = _underscore2['default'].random(0, 1000);
+  bear.hitAttack(num);
+
+  if (bear.health <= 0) {
+    p1health.text('Packers got lucky').addClass('downbear');
+    gameOver1.text('Thank you Bears!!!');
+  } else {
+    p1health.text(bear.health);
+  }
+});
 
 // var canvas;
 // var ctx;  // the "context" of the canvas that will be used (2D or 3D)

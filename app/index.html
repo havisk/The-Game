@@ -6,20 +6,28 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+  <h1>Click The Icons to Battle.</h1>
   <div id="game">
   	<div id="field">
   		<div class="pad left"></div>
   		<div class="pad right"></div>
       <!-- <canvas> -->
-  		<div id="paddleA" class="paddle">
-        <img src="images/bears.jpg" >   
+  		<div id="paddleA" class="paddle bear">
+        <img src="images/bears.jpg" class="attack" id="attack1">
       </div>
-  		<div id="paddleB" class="paddle">
-        <img src="images/greenbay.jpg" > 
+
+  		<div id="paddleB" class="paddle green">
+        <img src="images/greenbay.jpg" class="attack" id="attack2">
       </div>
-      <!-- </canvas>   -->
-  		<div id="ball"></div>
   	</div>
+
+    <div class="pl1">
+      <h2 class="N1">Bears <div class="p1health"></div></h2>
+    </div>
+
+    <div class="pl2">
+      <h2 class="N2">Green Bay <div class="p2health"></div></h2>
+    </div>
   </div>
   
   <script src="http://code.jquery.com/jquery.min.js"></script>

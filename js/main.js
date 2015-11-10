@@ -12,6 +12,46 @@ import Player2 from "./Greenbay";
 let bear = new Player1();
 let green = new Player2();
 
+let p1health = $('.p1health');
+let p2health = $('.p2health');
+
+let p1attack = $('#attack1');
+let p2attack = $('#attack2');
+
+let gameOver1 = $('.gameover1');
+let gameOver2 = $('.gameover2')
+
+
+p1health.text(bear.health);
+p2health.text(green.health);
+
+
+p1attack.on('click', function(){
+
+  let num = _.random(0, 1000);
+  green.hitAttack(num);
+
+  if(green.health <= 0) {
+    p2health.text('Bears Crush the Packers').addClass('downpacker');
+    gameOver1.text('DA Bears');
+  }else{
+    p2health.text(green.health);
+  }
+
+});
+
+p2attack.on('click', function(){
+
+  let num = _.random(0, 1000);
+  bear.hitAttack(num);
+
+  if(bear.health <= 0) {
+    p1health.text('Packers got lucky').addClass('downbear');
+    gameOver1.text('Thank you Bears!!!');
+  }else{
+    p1health.text(bear.health);
+  }
+});
 
 
 

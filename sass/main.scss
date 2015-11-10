@@ -5,6 +5,12 @@ body {
   background: url(../images/bg.gif) no-repeat;
   background-size: cover;
 }
+h1 {
+	position: relative;
+	color: white;
+	top: 0px;
+	left: 433px;
+}
 
 #game{
 	position: relative;
@@ -25,15 +31,23 @@ body {
 	cursor: pointer;
 }
 
-// #ball{
-// 	background: #B64C2B;
-// 	position: absolute;
-// 	width: 20px;
-// 	height: 20px;
-// 	left:	150;
-// 	top: 100px;
-// 	border-radius: 10px;
-// }
+
+
+.gameover1 {
+	position: absolute;
+  top: 300px;
+  left: 400px;
+  color: red;
+  font-size: 30px;
+}
+
+.gameover2 {
+	position: absolute;
+  top: 300px;
+  right: 467px;
+  color: red;
+  font-size: 30px;
+}
 
 .paddle img{
 	background-size: contain;
@@ -53,6 +67,34 @@ body {
 	// background-image: url(../images/greenbay.jpg);
 }
 
+.pl1{
+	position: relative;
+	top: 214px;
+  left: 350px;
+  & .N1{
+  	color: #1C1B41;
+  	text-shadow:
+    -1px -1px 0 #EE6E24,
+    1px -1px 0 #EE6E24,
+    -1px 1px 0 #EE6E24,
+    1px 1px 0 #EE6E24;
+  }
+}
+
+.pl2{
+	position: relative;
+	top: 140px;
+	left: 0px;
+	& .N2{
+		color: #03482D;
+		text-shadow:
+    -1px -1px 0 #C9920D,
+    1px -1px 0 #C9920D,
+    -1px 1px 0 #C9920D,
+    1px 1px 0 #C9920D;
+	}
+
+}
 .pad{
 	background: url(../images/hand.png) 50% 0 repeat-y;
 	width: 30px;
@@ -67,4 +109,13 @@ body {
 
 .pad.left{
 	left: 50px;
+}
+
+.p1health{
+color: #BF6922;
+
+} 
+.p2health {
+	
+	color: #F4FD73;
 }
