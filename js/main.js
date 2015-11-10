@@ -33,7 +33,6 @@ p1attack.on('click', function(){
 
   if(green.health <= 0) {
     p2health.text('Bears Crush the Packers').addClass('downpacker');
-    gameOver1.text('DA Bears');
   }else{
     p2health.text(green.health);
   }
@@ -47,8 +46,6 @@ p2attack.on('click', function(){
 
   if(bear.health <= 0) {
     p1health.text('Packers got lucky').addClass('downbear');
-    gameOver1.text('Thank you Bears!!!');
-  }else{
     p1health.text(bear.health);
   }
 });
